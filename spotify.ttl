@@ -1,0 +1,188 @@
+@prefix : <http://www.semanticweb.org/ricardo/ontologies/2020/3/spotify#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/ricardo/ontologies/2020/3/spotify> .
+
+<http://www.semanticweb.org/ricardo/ontologies/2020/3/spotify> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/ricardo/ontologies/2020/3/spotify#contém
+:contém rdf:type owl:ObjectProperty ;
+        owl:inverseOf :estáInseridaEm ;
+        rdfs:domain :álbum ;
+        rdfs:range :música .
+
+
+###  http://www.semanticweb.org/ricardo/ontologies/2020/3/spotify#estáInseridaEm
+:estáInseridaEm rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/ricardo/ontologies/2020/3/spotify#produz
+:produz rdf:type owl:ObjectProperty ;
+        owl:inverseOf :éProduzidoPor ;
+        rdfs:domain :artista ;
+        rdfs:range :álbum .
+
+
+###  http://www.semanticweb.org/ricardo/ontologies/2020/3/spotify#toca
+:toca rdf:type owl:ObjectProperty ;
+      owl:inverseOf :éTocadaPor ;
+      rdfs:domain :artista ;
+      rdfs:range :música .
+
+
+###  http://www.semanticweb.org/ricardo/ontologies/2020/3/spotify#éProduzidoPor
+:éProduzidoPor rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/ricardo/ontologies/2020/3/spotify#éTocadaPor
+:éTocadaPor rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/ricardo/ontologies/2020/3/spotify#dataLançamento
+:dataLançamento rdf:type owl:DatatypeProperty ;
+                rdfs:domain :álbum .
+
+
+###  http://www.semanticweb.org/ricardo/ontologies/2020/3/spotify#designação
+:designação rdf:type owl:DatatypeProperty ;
+            rdfs:domain :álbum .
+
+
+###  http://www.semanticweb.org/ricardo/ontologies/2020/3/spotify#duração
+:duração rdf:type owl:DatatypeProperty ;
+         rdfs:domain :música .
+
+
+###  http://www.semanticweb.org/ricardo/ontologies/2020/3/spotify#explícita
+:explícita rdf:type owl:DatatypeProperty ;
+           rdfs:domain :música .
+
+
+###  http://www.semanticweb.org/ricardo/ontologies/2020/3/spotify#gênero
+:gênero rdf:type owl:DatatypeProperty ;
+        rdfs:domain :artista .
+
+
+###  http://www.semanticweb.org/ricardo/ontologies/2020/3/spotify#imagem
+:imagem rdf:type owl:DatatypeProperty ;
+        rdfs:domain :artista .
+
+
+###  http://www.semanticweb.org/ricardo/ontologies/2020/3/spotify#nome
+:nome rdf:type owl:DatatypeProperty ;
+      rdfs:domain :artista .
+
+
+###  http://www.semanticweb.org/ricardo/ontologies/2020/3/spotify#popularidade
+:popularidade rdf:type owl:DatatypeProperty ;
+              rdfs:domain :artista .
+
+
+###  http://www.semanticweb.org/ricardo/ontologies/2020/3/spotify#seguidores
+:seguidores rdf:type owl:DatatypeProperty ;
+            rdfs:domain :artista .
+
+
+###  http://www.semanticweb.org/ricardo/ontologies/2020/3/spotify#tipo
+:tipo rdf:type owl:DatatypeProperty ;
+      rdfs:domain :artista .
+
+
+###  http://www.semanticweb.org/ricardo/ontologies/2020/3/spotify#título
+:título rdf:type owl:DatatypeProperty ;
+        rdfs:domain :música .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/ricardo/ontologies/2020/3/spotify#artista
+:artista rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ricardo/ontologies/2020/3/spotify#música
+:música rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ricardo/ontologies/2020/3/spotify#álbum
+:álbum rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/ricardo/ontologies/2020/3/spotify#album1
+:album1 rdf:type owl:NamedIndividual ,
+                 :álbum .
+
+
+###  http://www.semanticweb.org/ricardo/ontologies/2020/3/spotify#album2
+:album2 rdf:type owl:NamedIndividual ,
+                 :álbum .
+
+
+###  http://www.semanticweb.org/ricardo/ontologies/2020/3/spotify#artista1
+:artista1 rdf:type owl:NamedIndividual ,
+                   :artista .
+
+
+###  http://www.semanticweb.org/ricardo/ontologies/2020/3/spotify#artista2
+:artista2 rdf:type owl:NamedIndividual ,
+                   :artista .
+
+
+###  http://www.semanticweb.org/ricardo/ontologies/2020/3/spotify#artista3
+:artista3 rdf:type owl:NamedIndividual ,
+                   :artista .
+
+
+###  http://www.semanticweb.org/ricardo/ontologies/2020/3/spotify#musica1
+:musica1 rdf:type owl:NamedIndividual ,
+                  :música ;
+         :estáInseridaEm :album1 ;
+         :éTocadaPor :artista1 .
+
+
+###  http://www.semanticweb.org/ricardo/ontologies/2020/3/spotify#musica2
+:musica2 rdf:type owl:NamedIndividual ,
+                  :música ;
+         :estáInseridaEm :album1 ;
+         :éTocadaPor :artista1 ,
+                     :artista3 .
+
+
+###  http://www.semanticweb.org/ricardo/ontologies/2020/3/spotify#musica3
+:musica3 rdf:type owl:NamedIndividual ,
+                  :música ;
+         :estáInseridaEm :album1 ;
+         :éTocadaPor :artista1 .
+
+
+###  http://www.semanticweb.org/ricardo/ontologies/2020/3/spotify#musica4
+:musica4 rdf:type owl:NamedIndividual ,
+                  :música ;
+         :estáInseridaEm :album2 ;
+         :éTocadaPor :artista2 .
+
+
+###  http://www.semanticweb.org/ricardo/ontologies/2020/3/spotify#musica5
+:musica5 rdf:type owl:NamedIndividual ,
+                  :música ;
+         :estáInseridaEm :album2 ;
+         :éTocadaPor :artista2 .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
