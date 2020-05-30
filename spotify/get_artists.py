@@ -30,11 +30,13 @@ def get_top_artists(token):
             items = sp.current_user_top_artists(limit=49, offset=0)
             for artist in items['items']:
 
+                genres = str(artist['genres']).replace('\'', '').replace('[', '').replace(']', '')
+
                 writer.writerow({'id':artist['id'], 
                                  'nome':artist['name'], 
                                  'popularidade':artist['popularity'], 
                                  'seguidores':artist['followers']['total'], 
-                                 'genero':artist['genres'][0], 
+                                 'genero':genres, 
                                  'spotify':artist['external_urls']['spotify'], 
                                  'imagem':artist['images'][0]['url']})
                 number_artists += 1
@@ -42,11 +44,13 @@ def get_top_artists(token):
             items = sp.current_user_top_artists(limit=39, offset=49)
             for artist in items['items']:
 
+                genres = str(artist['genres']).replace('\'', '').replace('[', '').replace(']', '')
+
                 writer.writerow({'id':artist['id'], 
                                  'nome':artist['name'], 
                                  'popularidade':artist['popularity'], 
                                  'seguidores':artist['followers']['total'], 
-                                 'genero':artist['genres'], 
+                                 'genero':genres, 
                                  'spotify':artist['external_urls']['spotify'], 
                                  'imagem':artist['images'][0]['url']})
                 number_artists += 1
@@ -82,6 +86,8 @@ def get_related_artists(token, number_artists):
             next(iterreader)
             appender = csv.DictWriter(csv_file, fieldnames=field_names, delimiter =';')
 
+            print('        Parsing related artists...')
+
             flag = 0
             for row in iterreader:
 
@@ -96,11 +102,13 @@ def get_related_artists(token, number_artists):
 
                         if artist['genres'] != [] and artist['images'] != []:
 
+                            genres = str(artist['genres']).replace('\'', '').replace('[', '').replace(']', '')
+
                             appender.writerow({'id':artist['id'], 
                                             'nome':artist['name'], 
                                             'popularidade':artist['popularity'], 
                                             'seguidores':artist['followers']['total'], 
-                                            'genero':artist['genres'], 
+                                            'genero':genres, 
                                             'spotify':artist['external_urls']['spotify'], 
                                             'imagem':artist['images'][0]['url']})
 

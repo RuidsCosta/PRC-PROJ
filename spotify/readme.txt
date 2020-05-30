@@ -8,3 +8,4 @@ Executar:
     python3 get_artists.py
     python3 get_albums.py
     python3 get_artists.py
+
