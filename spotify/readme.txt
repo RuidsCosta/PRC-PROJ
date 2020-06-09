@@ -12,5 +12,5 @@ Executar:
     python3 albums_to_ttl.py
     python3 tracks_to_ttl.py
     Juntar todos os .ttls ao spotify.ttl, criando a full_ontology.ttl.
-    Carregar no GraphDB.
+    Carregar no GraphDB, com repository-name "spotify".
     Enjoy!

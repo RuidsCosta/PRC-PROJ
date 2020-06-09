@@ -74,6 +74,16 @@
          rdfs:domain :artista .
 
 
+###  http://www.semanticweb.org/ricardo/ontologies/2020/3/spotify#id
+:id rdf:type owl:DatatypeProperty ;
+    rdfs:domain [ rdf:type owl:Class ;
+                  owl:unionOf ( :album
+                                :artista
+                                :musica
+                              )
+                ] .
+
+
 ###  http://www.semanticweb.org/ricardo/ontologies/2020/3/spotify#imagem
 :imagem rdf:type owl:DatatypeProperty ;
         rdfs:domain :artista .
@@ -140,6 +150,7 @@
         :éProduzidoPor :artista1 ;
         :capa "htpp://imgur.com/capa1"^^xsd:string ;
         :data_lancamento "2019-05-12"^^xsd:string ;
+        :id "album1"^^xsd:string ;
         :spotify "http://spotify.com/album1"^^xsd:string ;
         :título "Album1"^^xsd:string .
 
@@ -148,6 +159,7 @@
 :artista1 rdf:type owl:NamedIndividual ,
                    :artista ;
           :generos "rock, metal rock"^^xsd:string ;
+          :id "artista1"^^xsd:string ;
           :imagem "http://imgur.com/artista1"^^xsd:string ;
           :nome "artista1"^^xsd:string ;
           :popularidade "72"^^xsd:int ;
@@ -160,6 +172,7 @@
                   :musica ;
          :duracao "240"^^xsd:int ;
          :explicita "True"^^xsd:string ;
+         :id "musica1"^^xsd:string ;
          :spotify "http://spotify.com/musica1"^^xsd:string ;
          :título "musica1"^^xsd:string .
 

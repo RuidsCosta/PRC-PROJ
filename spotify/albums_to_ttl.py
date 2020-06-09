@@ -45,7 +45,8 @@ if __name__ == '__main__':
             albums_ttl.write(f'    :capa "{imagem}"^^xsd:string ;\n')
             albums_ttl.write(f'    :data_lancamento "{data_lancamento}"^^xsd:string ;\n')
             albums_ttl.write(f'    :spotify "{spotify}"^^xsd:string ;\n')
-            albums_ttl.write(f'    :título "{nome}"^^xsd:string .\n')
+            albums_ttl.write(f'    :título "{nome}"^^xsd:string ;\n')
+            albums_ttl.write(f'    :id "{id}"^^xsd:string .\n')
             albums_ttl.write('\n\n')
 
     albums_csv.close()

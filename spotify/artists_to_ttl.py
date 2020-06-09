@@ -47,7 +47,8 @@ if __name__ == '__main__':
             artists_ttl.write(f'    :nome "{nome}"^^xsd:string ;\n')
             artists_ttl.write(f'    :popularidade "{popularidade}"^^xsd:int ;\n')
             artists_ttl.write(f'    :seguidores "{seguidores}"^^xsd:int ;\n')
-            artists_ttl.write(f'    :spotify "{spotify}"^^xsd:string .\n')
+            artists_ttl.write(f'    :spotify "{spotify}"^^xsd:string ;\n')
+            artists_ttl.write(f'    :id "{id}"^^xsd:string .\n')
             artists_ttl.write('\n\n')
 
     artists_csv.close()

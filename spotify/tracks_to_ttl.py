@@ -7,6 +7,7 @@ import csv
 :musica1 rdf:type owl:NamedIndividual ,
                   :musica ;
          :duracao "240"^^xsd:int ;
+         :id "musica1"^^xsd:string ;
          :explicita "True"^^xsd:string ;
          :spotify "http://spotify.com/musica1"^^xsd:string ;
          :título "musica1"^^xsd:string .
@@ -43,7 +44,8 @@ if __name__ == '__main__':
             musicas_ttl.write(f'    :duracao "{duracao}"^^xsd:int ;\n')
             musicas_ttl.write(f'    :explicita "{explicita}"^^xsd:string ;\n')
             musicas_ttl.write(f'    :spotify "{spotify}"^^xsd:string ;\n')
-            musicas_ttl.write(f'    :título "{nome}"^^xsd:string .\n')
+            musicas_ttl.write(f'    :título "{nome}"^^xsd:string ;\n')
+            musicas_ttl.write(f'    :id "{id}"^^xsd:string .\n')
             musicas_ttl.write('\n\n')
 
     musicas_csv.close()
