@@ -10,4 +10,10 @@ export const ActionLoadPageHome = ({ commit }) => {
     services.http.loadMusicas().then(res => {
         commit('SET_MUSICAS', res.data)
     })
+}
+
+export const ActionLoadPageArtistas = ({ commit }) => {
+    services.http.loadArtistas().then(res => {
+        commit('SET_ARTISTAS', res.data)
+    })
 } 

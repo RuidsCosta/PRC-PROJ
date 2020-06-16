@@ -10,22 +10,33 @@
       <v-btn 
         text 
         color="white"
-        @click="$router.push('/about')" 
+        @click="$router.push('/artistas')" 
         class="font-weight-light"
       >
-        <span>About</span>
-        <v-icon right color="white">mdi-information-outline</v-icon>
+        <span>Artistas</span>
+        <v-icon right color="white">mdi-microphone-variant</v-icon>
+      </v-btn>  
+
+      <v-btn 
+        text 
+        color="white"
+        @click="$router.push('/albuns')"  
+        class="font-weight-light"
+      >
+        <span>Álbuns</span>
+        <v-icon right color="white">mdi-album</v-icon>
       </v-btn>
 
       <v-btn 
         text 
         color="white"
-        @click="$router.push('/team')"  
+        @click="$router.push('/musicas')"  
         class="font-weight-light"
       >
-        <span>Team</span>
-        <v-icon right color="white">mdi-account-group</v-icon>
+        <span>Músicas</span>
+        <v-icon right color="white">mdi-music-circle-outline</v-icon>
       </v-btn>
     </v-app-bar>
   </div>
 </template>
+
