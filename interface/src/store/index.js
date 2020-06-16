@@ -1,14 +1,14 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-import spotify from './spotify'
+import music from './music'
 
 Vue.use(Vuex)
 
 export default function () {
     const Store = new Vuex.Store({
         modules: {
-            spotify
+            music
         } 
     })
     

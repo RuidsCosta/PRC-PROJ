@@ -13,4 +13,5 @@ Object.keys(services).map(service => {
 })
 
 export default services
+export { http }
 
