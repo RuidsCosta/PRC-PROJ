@@ -11,12 +11,16 @@
               <v-text-field
                 v-model="search"
                 append-icon="mdi-magnify"
-                label="Search"
+                label="Pesquisar"
                 single-line
                 hide-details
               ></v-text-field>
             </v-card-title>
-            <v-data-table :headers="headers" :items="artistas" :search="search"></v-data-table>
+            <v-data-table id="table" :headers="headers" :items="artistas" :search="search">
+              <template v-slot:no-data>
+                <v-data-table id="table" hide-default-footer loading loading-text="A carregar... Por favor espere"></v-data-table>
+              </template>
+            </v-data-table>
           </v-card>
         </v-container>
       </v-container>
@@ -36,10 +40,10 @@ export default {
   data: () => ({
     search: '',
     headers: [
-      { text: "Artista", sortable: true, value: "artista", class: "overline" },
-      { text: "Gênero", sortable: false, value: "generos", class: "overline" },
-      { text: "Popularidade", sortable: true, value: "popularidade", class: "overline" },
-      { text: "Seguidores", sortable: true, value: "seguidores", class: "overline" }
+      { text: "Artista", sortable: true, value: "artista", class: "overline red--text" },
+      { text: "Gênero", sortable: false, value: "generos", class: "overline red--text" },
+      { text: "Popularidade", sortable: true, value: "popularidade", class: "overline red--text" },
+      { text: "Seguidores", sortable: true, value: "seguidores", class: "overline red--text" }
     ]
   }),
   mounted() {
@@ -55,7 +59,23 @@ export default {
 </script>
 
 <style scoped>
+#artistas {
+  background-color: black;
+}
+
+#table {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h3 {
+  margin-left: 10px;
+  color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
 hr {
-    border: 1px solid red;
+  margin-left: 10px;
+  margin-right: 10px;
+  border: 1px solid red;
 }
 </style>
