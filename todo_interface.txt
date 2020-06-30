@@ -1,0 +1,33 @@
+Clicar no UMinhoMusic e ir para a homepage. FEITO
+Adicionar pagina da Equipa.
+
+HOMEPAGE:
+  Alterar texto no centro da pagina. FEITO
+  Adicionar botao de 'Ver Mais >' na aba dos artistas.
+  Adicionar botao de 'Ver Mais >' na aba dos albuns.
+  Clicar na foto de artista e ir para a sua pagina.
+  Clicar na foto do album e ir para a sua pagina.
+  
+ARTISTAS:
+  Adicionar botao para ir para a pagina do artista.
+  Adicionar botao para ir para a pagina do artista no spotify.
+  
+ALBUNS:
+  Adicionar botao para ir para a pagina do album.
+  Adicionar botao para ir para a pagina do album no spotify.
+  Adicionar numero de musicas de cada album.
+  
+MUSICAS:
+  Adicionar botao para ir para a pagina da musica no spotify.
+  Adicionar se cada musica é explicita ou nao.
+
+ARTISTA:
+  Adicionar botao para ir para a pagina do artista no spotify.
+  Clicar na foto dos albuns e ir para as suas paginas.
+  
+ALBUM:
+  Adicionar botao para ir para a pagina do album no spotify.
+  Adicionar botao para ir para as paginas das musicas no spotify.
+  
+EQUIPA:
+  Adicionar os nossos nomes.
