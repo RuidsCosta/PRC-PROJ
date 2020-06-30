@@ -5,8 +5,8 @@
       <v-container fluid style="padding: 0%">
         <v-img src="../assets/topo.png" height="210px">
           <div>
-            <h1 style="margin: 60px 0px 0px 730px">Explore</h1>
-            <h4 style="margin-left: 730px">Aqui tu encontras o melhor acervo musical para a tua playlist.</h4>
+            <h1 style="margin: 60px 0px 0px 730px">Explora</h1>
+            <h4 style="margin-left: 730px">Encontra aqui as tuas músicas, álbuns e artistas favoritos.</h4>
         </div>
         </v-img>
       </v-container>

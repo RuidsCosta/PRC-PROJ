@@ -1,10 +1,16 @@
 <template>
   <div>
     <v-app-bar flat color="black" >
-      <v-toolbar-title>
-        <v-icon left color="red">mdi-music</v-icon>
-        <span class="font-black red--text">UMinhoMusic</span> 
-      </v-toolbar-title>
+      <v-btn 
+        text 
+        color="white"
+        @click="$router.push('/')" 
+      >
+        <v-toolbar-title>
+          <v-icon left color="red">mdi-music</v-icon>
+            <span class="font-black red--text">UMinhoMusic</span> 
+        </v-toolbar-title>
+      </v-btn> 
       <v-spacer></v-spacer>
 
       <v-btn 
