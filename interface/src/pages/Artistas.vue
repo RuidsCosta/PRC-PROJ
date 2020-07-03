@@ -20,6 +20,20 @@
               <template v-slot:no-data>
                 <v-data-table id="table" hide-default-footer loading loading-text="A carregar... Por favor espere"></v-data-table>
               </template>
+              <template v-slot:item="row">
+                <tr @click="goToArtist(row.item.id_artista)">
+                  <td>{{row.item.artista}}</td>
+                  <td>{{row.item.generos}}</td>
+                  <td>{{row.item.popularidade}}</td>
+                  <td>{{row.item.seguidores}}</td>
+                  <td>
+                    <v-btn small rounded color="black" @click="goToSpotify(row.item.spotify)">
+                      <v-icon left color="green">mdi-spotify</v-icon>
+                      <span class="white--text">Spotify</span>
+                    </v-btn>
+                  </td>
+                </tr>
+            </template>
             </v-data-table>
           </v-card>
         </v-container>
@@ -40,8 +54,8 @@ export default {
   data: () => ({
     search: '',
     headers: [
-      { text: "Artista", sortable: true, value: "artista", class: "overline red--text" },
-      { text: "Gênero", sortable: false, value: "generos", class: "overline red--text" },
+      { text: "Artista", width:"20%", sortable: true, value: "artista", class: "overline red--text" },
+      { text: "Gênero", width:"45%", sortable: false, value: "generos", class: "overline red--text" },
       { text: "Popularidade", sortable: true, value: "popularidade", class: "overline red--text" },
       { text: "Seguidores", sortable: true, value: "seguidores", class: "overline red--text" }
     ]
@@ -53,7 +67,13 @@ export default {
     ...mapState("music", ["artistas"])
   },
   methods: {
-    ...mapActions("music", ["ActionLoadPageArtistas"])
+    ...mapActions("music", ["ActionLoadPageArtistas"]),
+    goToArtist(item) {
+      this.$router.push(`/artistas/${item}`)
+    },
+    goToSpotify(item) {
+      window.open(item);
+    }
   }
 };
 </script>
@@ -65,6 +85,7 @@ export default {
 
 #table {
   font-family: Georgia, 'Times New Roman', Times, serif;
+  cursor: pointer;
 }
 
 h3 {

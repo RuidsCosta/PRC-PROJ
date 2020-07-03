@@ -20,6 +20,21 @@
               <template v-slot:no-data>
                 <v-data-table id="table" hide-default-footer loading loading-text="A carregar... Por favor espere"></v-data-table>
               </template>
+              <template v-slot:item="row">
+                <tr>
+                  <td>{{row.item.musica}}</td>
+                  <td>{{row.item.artista}}</td>
+                  <td>{{row.item.album}}</td>
+                  <td>{{verifyExplicit(row.item.explicita)}}</td>
+                  <td>{{millisToMinutesAndSeconds(row.item.duracao)}}</td>
+                  <td>
+                    <v-btn small rounded color="black" @click="goToSpotify(row.item.spotify)">
+                      <v-icon left color="green">mdi-spotify</v-icon>
+                      <span class="white--text">Spotify</span>
+                    </v-btn>
+                  </td>
+                </tr>
+            </template>
             </v-data-table>
           </v-card>
         </v-container>
@@ -40,9 +55,10 @@ export default {
   data: () => ({
     search: "",
     headers: [
-      { text: "Música", sortable: true, value: "musica", class: "overline red--text" },
-      { text: "Artista", sortable: true, value: "artista", class: "overline red--text" },
-      { text: "Álbum", sortable: true, value: "album", class: "overline red--text" },
+      { text: "Música", width:"25%", sortable: true, value: "musica", class: "overline red--text" },
+      { text: "Artista", width:"25%", sortable: true, value: "artista", class: "overline red--text" },
+      { text: "Álbum", width:"25%", sortable: true, value: "album", class: "overline red--text" },
+      { text: "", sortable: true, value: "explicita", class: "overline red--text" },
       { text: "Duração", sortable: false, value: "duracao", class: "overline red--text" }
     ]
   }),
@@ -53,7 +69,20 @@ export default {
     ...mapState("music", ["musicas"])
   },
   methods: {
-    ...mapActions("music", ["ActionLoadPageMusicas"])
+    ...mapActions("music", ["ActionLoadPageMusicas"]),
+    goToSpotify(item) {
+      window.open(item);
+    },
+    verifyExplicit(item) {
+      if (item == "True") {
+        return "Explícita"
+      }
+    },
+    millisToMinutesAndSeconds(millis) {
+      var minutes = Math.floor(millis / 60000);
+      var seconds = ((millis % 60000) / 1000).toFixed(0);
+      return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+    }
   }
 };
 </script>

@@ -1,33 +1,32 @@
 Clicar no UMinhoMusic e ir para a homepage. FEITO
-Adicionar pagina da Equipa.
 
 HOMEPAGE:
   Alterar texto no centro da pagina. FEITO
-  Adicionar botao de 'Ver Mais >' na aba dos artistas.
-  Adicionar botao de 'Ver Mais >' na aba dos albuns.
-  Clicar na foto de artista e ir para a sua pagina.
-  Clicar na foto do album e ir para a sua pagina.
+  Adicionar botao de 'Ver Mais >' na aba dos artistas. FEITO
+  Adicionar botao de 'Ver Mais >' na aba dos albuns. FEITO
+  Clicar na foto de artista e ir para a sua pagina. FEITO
+  Clicar na foto do album e ir para a sua pagina. FEITO
   
 ARTISTAS:
-  Adicionar botao para ir para a pagina do artista.
-  Adicionar botao para ir para a pagina do artista no spotify.
+  Adicionar botao para ir para a pagina do artista. FEITO - clicar na linha
+  Adicionar botao para ir para a pagina do artista no spotify. FEITO
   
 ALBUNS:
-  Adicionar botao para ir para a pagina do album.
-  Adicionar botao para ir para a pagina do album no spotify.
-  Adicionar numero de musicas de cada album.
+  Adicionar botao para ir para a pagina do album. FEITO - clicar na linha
+  Adicionar botao para ir para a pagina do album no spotify. FEITO
+  Adicionar numero de musicas de cada album. muito trabalho
   
 MUSICAS:
-  Adicionar botao para ir para a pagina da musica no spotify.
-  Adicionar se cada musica é explicita ou nao.
+  Adicionar botao para ir para a pagina da musica no spotify. FEITO
+  Adicionar se cada musica é explicita ou nao. FEITO
+  Convertido duração em minutos. FEITO
 
 ARTISTA:
-  Adicionar botao para ir para a pagina do artista no spotify.
-  Clicar na foto dos albuns e ir para as suas paginas.
+  Adicionar botao para ir para a pagina do artista no spotify. FEITO
+  Clicar na foto dos albuns e ir para as suas paginas. FEITO
   
 ALBUM:
-  Adicionar botao para ir para a pagina do album no spotify.
-  Adicionar botao para ir para as paginas das musicas no spotify.
-  
-EQUIPA:
-  Adicionar os nossos nomes.
+  Adicionar botao para ir para a pagina do album no spotify. FEITO
+  Adicionar botao para ir para as paginas das musicas no spotify. FEITO
+  Convertido duração em minutos. FEITO
+

@@ -7,7 +7,7 @@
           <v-col cols="auto">
             <v-img height="250" width="250" :src="`${ artistas[0].imagem }`"></v-img>
           </v-col>
-          <v-col cols="auto" class="text-left pl-4">
+          <v-col cols="auto" class="text-left pl-10 mt-n6">
             <v-row class="flex-column ma-0 fill-height" justify="center">
               <v-col class="px-0">
                 <h1>{{ artistas[0].artista }}</h1>
@@ -21,6 +21,12 @@
               <v-col class="px-0">
                 <h3>Seguidores: {{ artistas[0].seguidores }}</h3>
               </v-col>
+              <v-col class="px-0">
+                <v-btn small rounded color="white" @click="goToSpotify(artistas[0].spotify)">
+                  <v-icon left color="green">mdi-spotify</v-icon>
+                    <span class="green--text">Spotify</span>
+                  </v-btn>
+              </v-col>
             </v-row>
           </v-col>
         </v-row>
@@ -31,7 +37,7 @@
         <v-container fluid style="padding: 0%">
           <v-row>
             <v-col v-for="i in albuns" :key="i.id_album" class="child-flex" cols="auto">
-              <v-card class="d-inline-block" max-width="190" >
+              <v-card class="d-inline-block" max-width="190" @click="goToAlbum(i.id_album)">
                 <v-img height="190" width="190" :src="`${ i.capa }`"></v-img>
                 <h4 class="mt-2">{{ i.album }}</h4>
               </v-card>
@@ -59,7 +65,13 @@ export default {
     ...mapState("music", ["albuns", "artistas"])
   },
   methods: {
-    ...mapActions("music", ["ActionLoadPageArtistaID"])
+    ...mapActions("music", ["ActionLoadPageArtistaID"]),
+    goToAlbum(item) {
+      this.$router.push(`/albuns/${item}`)
+    },
+    goToSpotify(item) {
+      window.open(item);
+    }
   }
 };
 </script>
@@ -75,6 +87,7 @@ export default {
 
 .v-card {
   background-color: black;
+  cursor: pointer;
 }
 
 h1 {

@@ -158,7 +158,7 @@ spotify.getAlbums = async function(){
         ?art s:nome ?artista.
         ?a s:spotify ?spotify.
         
-    } order by (?album) `
+    } order by desc (?data_lancamento) `
 
     var encoded = encodeURIComponent(prefixes + query)
 
