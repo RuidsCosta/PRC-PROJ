@@ -1,16 +1,12 @@
 <template>
   <div>
     <v-app-bar flat color="black" >
-      <v-btn 
-        text 
-        color="white"
-        @click="$router.push('/')" 
-      >
+      <div class="home" @click="$router.push('/')" >
         <v-toolbar-title>
           <v-icon left color="red">mdi-music</v-icon>
             <span class="font-black red--text">UMinhoMusic</span> 
         </v-toolbar-title>
-      </v-btn> 
+      </div>
       <v-spacer></v-spacer>
 
       <v-btn 
@@ -48,5 +44,8 @@ span {
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+.home {
+  cursor: pointer;
+}
 </style>
 

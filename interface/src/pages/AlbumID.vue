@@ -6,21 +6,21 @@
         <div id="topo"></div>
         <v-row id="img">
           <v-col cols="auto">
-            <v-img height="250" width="250" :src="`${ albuns[0].capa }`"></v-img>
+            <v-img height="250" width="250" :src="`${ albunsID[0].capa }`"></v-img>
           </v-col>
           <v-col cols="auto" class="text-left pl-10 mt-3">
             <v-row class="flex-column ma-0 fill-height" justify="center">
               <v-col class="px-0">
-                <h1>{{ albuns[0].album }}</h1>
+                <h1>{{ albunsID[0].album }}</h1>
               </v-col>
               <v-col class="px-0">
-                <h3>{{ albuns[0].artista }}</h3>
+                <h3>{{ albunsID[0].artista }}</h3>
               </v-col>
               <v-col class="px-0 black--text">
-                <h4>Data de lançamento {{ albuns[0].data_lancamento }}</h4>
+                <h4>Data de lançamento {{ albunsID[0].data_lancamento }}</h4>
               </v-col>
               <v-col class="px-0">
-                <v-btn small rounded color="black" @click="goToSpotifyAlbum(albuns[0].spotify)">
+                <v-btn small rounded color="black" @click="goToSpotifyAlbum(albunsID[0].spotify)">
                   <v-icon left color="green">mdi-spotify</v-icon>
                   <span class="white--text">Spotify</span>
                 </v-btn>
@@ -40,7 +40,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="i in musicas" :key="i">
+              <tr v-for="i in musicasAlbum" :key="i">
                 <td width="50%">{{i.musica}}</td>
                 <td width="15%">{{verifyExplicit(i.explicita)}}</td>
                 <td width="15%">{{millisToMinutesAndSeconds(i.duracao)}}</td>
@@ -72,7 +72,7 @@ export default {
     this.ActionLoadPageAlbumID(this.$route.params.id);
   },
   computed: {
-    ...mapState("music", ["albuns", "musicas"])
+    ...mapState("music", ["albunsID", "musicasAlbum"])
   },
   methods: {
     ...mapActions("music", ["ActionLoadPageAlbumID"]),

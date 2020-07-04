@@ -5,24 +5,24 @@
       <v-container fluid style="padding: 0%">
         <v-row id="img">
           <v-col cols="auto">
-            <v-img height="250" width="250" :src="`${ artistas[0].imagem }`"></v-img>
+            <v-img height="250" width="250" :src="`${ artistaID.imagem }`"></v-img>
           </v-col>
           <v-col cols="auto" class="text-left pl-10 mt-n6">
             <v-row class="flex-column ma-0 fill-height" justify="center">
               <v-col class="px-0">
-                <h1>{{ artistas[0].artista }}</h1>
+                <h1>{{ artistaID.artista }}</h1>
               </v-col>
               <v-col class="px-0">
-                <h3>Gêneros: {{ artistas[0].generos }}</h3>
+                <h3>Gêneros: {{ artistaID.generos }}</h3>
               </v-col>
               <v-col class="px-0">
-                <h3>Popularidade: {{ artistas[0].popularidade }}</h3>
+                <h3>Popularidade: {{ artistaID.popularidade }}</h3>
               </v-col>
               <v-col class="px-0">
-                <h3>Seguidores: {{ artistas[0].seguidores }}</h3>
+                <h3>Seguidores: {{ artistaID.seguidores }}</h3>
               </v-col>
               <v-col class="px-0">
-                <v-btn small rounded color="white" @click="goToSpotify(artistas[0].spotify)">
+                <v-btn small rounded color="white" @click="goToSpotify(artistaID.spotify)">
                   <v-icon left color="green">mdi-spotify</v-icon>
                     <span class="green--text">Spotify</span>
                   </v-btn>
@@ -36,7 +36,7 @@
         <hr />
         <v-container fluid style="padding: 0%">
           <v-row>
-            <v-col v-for="i in albuns" :key="i.id_album" class="child-flex" cols="auto">
+            <v-col v-for="i in albunsID" :key="i.id_album" class="child-flex" cols="auto">
               <v-card class="d-inline-block" max-width="190" @click="goToAlbum(i.id_album)">
                 <v-img height="190" width="190" :src="`${ i.capa }`"></v-img>
                 <h4 class="mt-2">{{ i.album }}</h4>
@@ -62,7 +62,7 @@ export default {
     this.ActionLoadPageArtistaID(this.$route.params.id);
   },
   computed: {
-    ...mapState("music", ["albuns", "artistas"])
+    ...mapState("music", ["albunsID", "artistaID"])
   },
   methods: {
     ...mapActions("music", ["ActionLoadPageArtistaID"]),

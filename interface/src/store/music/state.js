@@ -1,5 +1,8 @@
 export default {
     artistas: [],
+    artistaID: {},
     albuns: [],
-    musicas: []
+    albunsID: [],
+    musicas: [],
+    musicasAlbum: []
 }
